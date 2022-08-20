@@ -21,7 +21,7 @@ before attempting to call the function.
     // First parameter is the address to mint to
     "0xb371d1C5629C70ACd726B20a045D197c256E1054",
     // Second parameter is the metadata URI
-    "https://ipfs.io/ipfs/Qmf9csTfndWRgH2z35WUBm9jTuQKfSv1dJC9YKW6iTZkDP/0",
+    "ipfs://Qmf9csTfndWRgH2z35WUBm9jTuQKfSv1dJC9YKW6iTZkDP/0",
   ]}
   // If the function is successful, we can do something here.
   onSuccess={(result) => console.log(result)}
