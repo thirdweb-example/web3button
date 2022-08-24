@@ -1,6 +1,8 @@
-import { Web3Button } from "@thirdweb-dev/react";
+import { useAddress, Web3Button } from "@thirdweb-dev/react";
 
 export default function Home() {
+  const address = useAddress();
+
   return (
     <div
       style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
@@ -16,7 +18,7 @@ export default function Home() {
 
       <Web3Button
         // The contract address
-        contractAddress="0xe0F5f8Bb09627B0A886D4CBd300Ba36cd9E522c6"
+        contractAddress="0x424037abd63d32595bD843791ab015C31c87Cb6d"
         // The name of the function to call on the contract
         functionName="mintTo"
         // Some customization of colors and styling
@@ -25,7 +27,7 @@ export default function Home() {
         // The mintTo Function on this contract accepts two parameters, we can pass them in an array here.
         params={[
           // First parameter is the address to mint to
-          "0xb371d1C5629C70ACd726B20a045D197c256E1054",
+          address,
           // Second parameter is the metadata URI
           "ipfs://Qmf9csTfndWRgH2z35WUBm9jTuQKfSv1dJC9YKW6iTZkDP/0",
         ]}
