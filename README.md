@@ -10,19 +10,29 @@ before attempting to call the function.
 ```jsx
 <Web3Button
   // The contract address
-  contractAddress="0xe0F5f8Bb09627B0A886D4CBd300Ba36cd9E522c6"
-  // The name of the function to call on the contract
-  functionName="mintTo"
+  contractAddress="0x424037abd63d32595bD843791ab015C31c87Cb6d"
+  // Access the contract itself, perform any action you want on it:
+  action={(contract) =>
+    contract.nft.mint.to(address, {
+      name: "Hello world!",
+      // Image can be a File, or any url that points to a file
+      image: myFile,
+      description: "Your awesome NFT",
+    })
+  }
+  // Or just call the function name and parameters directly:
+  // functionName="mintTo"
+  // // The mintTo Function on this contract accepts two parameters, we can pass them in an array here.
+  // params={[
+  //   // First parameter is the address to mint to
+  //   address,
+  //   // Second parameter is the metadata URI
+  //   "ipfs://Qmf9csTfndWRgH2z35WUBm9jTuQKfSv1dJC9YKW6iTZkDP/0",
+  // ]}
+
   // Some customization of colors and styling
   colorMode="light"
   accentColor="#F213A4"
-  // The mintTo Function on this contract accepts two parameters, we can pass them in an array here.
-  params={[
-    // First parameter is the address to mint to
-    "0xb371d1C5629C70ACd726B20a045D197c256E1054",
-    // Second parameter is the metadata URI
-    "ipfs://Qmf9csTfndWRgH2z35WUBm9jTuQKfSv1dJC9YKW6iTZkDP/0",
-  ]}
   // If the function is successful, we can do something here.
   onSuccess={(result) => console.log(result)}
   // If the function fails, we can do something here.
