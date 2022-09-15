@@ -29,5 +29,13 @@
   align-items: center;
   justify-content: center;
   color: grey;
+  margin-bottom: 16px;
   cursor: pointer;
+}
+
+.imagePreview {
+  max-height: 250px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 16px;
 }
