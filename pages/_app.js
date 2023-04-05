@@ -1,14 +1,14 @@
-import { ChainId, ThirdwebProvider } from "@thirdweb-dev/react";
-import GithubTriangle from "../components/GithubTriangle";
+import { ThirdwebProvider } from "@thirdweb-dev/react";
 import Head from "next/head";
+import GithubTriangle from "../components/GithubTriangle";
 import "../styles/globals.css";
 
-// This is the chainId your dApp will work on.
-const activeChainId = ChainId.Goerli;
+// This is the chain your dApp will work on.
+const activeChain = "mumbai";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ThirdwebProvider desiredChainId={activeChainId}>
+    <ThirdwebProvider activeChain={activeChain}>
       <Head>
         <title>thirdweb Web3Button</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
